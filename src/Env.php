@@ -14,18 +14,17 @@ class Env
 {
 
     /**
+     * @param string $directory
      * @param string $envFile
+     * @return void
      */
-    public function __construct(
-        private readonly string $envFile = '.env'
-    )
+    public static function load(string $directory, string $envFile): void
     {
-        if (file_exists($this->envFile)) {
-            $dotEnv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'], $this->envFile);
+        if (file_exists($directory . '/'. $envFile)) {
+            $dotEnv = DotEnv::createImmutable($directory, $envFile);
             $dotEnv->load();
         }
     }
-
 
     /**
      * Получить запись из $_ENV
