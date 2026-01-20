@@ -14,10 +14,10 @@ class Env
 {
 
     /**
-     * @param $envFile
+     * @param string $envFile
      */
     public function __construct(
-        private readonly $envFile = '.env'
+        private readonly string $envFile = '.env'
     )
     {
         if (file_exists($this->envFile)) {
