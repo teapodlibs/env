@@ -7,11 +7,25 @@ use Dotenv\Dotenv;
 /**
  * Env
  *
- * @package helpers
+ * @package Teapodsoft
  * @description Класс для работы с .env файлом
  */
 class Env
 {
+
+    /**
+     * @param $envFile
+     */
+    public function __construct(
+        private readonly $envFile = '.env'
+    )
+    {
+        if (file_exists($this->envFile)) {
+            $dotEnv = Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT'], $this->envFile);
+            $dotEnv->load();
+        }
+    }
+
 
     /**
      * Получить запись из $_ENV
