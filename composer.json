@@ -1,9 +1,9 @@
 {
-    "name": "teapodlibs/___",
+    "name": "teapodlibs/env",
     "type": "library",
-    "description": "___",
+    "description": ".env file reader",
     "version": "1.0.0",
-    "revision": "",
+    "revision": "20260120",
     "homepage": "https://teapodsoft.ru/",
     "authors": [
         {
@@ -21,13 +21,14 @@
     ],
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/teapodlibs/___/issues?state=open",
-        "source": "https://github.com/teapodlibs/___"
+        "issues": "https://github.com/teapodlibs/env/issues?state=open",
+        "source": "https://github.com/teapodlibs/env"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.1"
+        "php": ">=8.3",
+        "vlucas/phpdotenv": "v5.6.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.89.1",
@@ -40,12 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Teapodsoft\\___\\": "src/"
+            "Teapodsoft\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Teapodsoft\\___\\Tests\\": "tests/"
+            "Teapodsoft\\Tests\\": "tests/"
         }
     },
     "config": {
